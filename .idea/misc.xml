@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/drawable-v24/ic_line2.xml" value="0.2846153846153846" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/drawable/circle_gray_bg.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/drawable/ic_line2.xml" value="0.2846153846153846" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/drawable/item_nav_bg.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/activity_add_address.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/activity_product_details.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/activity_splash.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/bottom_image_row.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/child_row.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/comment_row.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/fragment_home.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/fragment_policy.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/main_category_row.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/product_favorite_row.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/product_menu_row.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/product_offer_row.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/product_row.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/product_row2.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/product_row3.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/search_row.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/slider_row.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/ss.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/top_image_row.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/menu/menu.xml" value="0.27291666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
