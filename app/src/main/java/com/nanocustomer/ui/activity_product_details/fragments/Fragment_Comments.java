@@ -76,16 +76,16 @@ public class Fragment_Comments extends Fragment implements FragmentCommentView {
             productModel = (ProductModel) bundle.getSerializable("data");
         }
 
-//        if (productModel.getComments().size()>0){
-//            commentModelList.addAll(productModel.getComments());
-//            adapter = new CommentsAdapter(commentModelList,activity);
-//            binding.recView.setLayoutManager(new LinearLayoutManager(activity));
-//            binding.recView.setAdapter(adapter);
-//            binding.tvNoData.setVisibility(View.GONE);
-//
-//        }else {
+        if (productModel.getComments().size()>0){
+            commentModelList.addAll(productModel.getComments());
+            adapter = new CommentsAdapter(commentModelList,activity);
+            binding.recView.setLayoutManager(new LinearLayoutManager(activity));
+            binding.recView.setAdapter(adapter);
+            binding.tvNoData.setVisibility(View.GONE);
+
+        }else {
             binding.tvNoData.setVisibility(View.VISIBLE);
-      //  }
+        }
 
         if (userModel==null){
             binding.llComment.setVisibility(View.GONE);

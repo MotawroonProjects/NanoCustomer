@@ -53,7 +53,7 @@ public class FragmentOrderPresenter {
                     public void onResponse(Call<OrderDataModel> call, Response<OrderDataModel> response) {
                         view.onProgressHide();
                         if (response.isSuccessful()) {
-                            if (response.body() != null && response.body().getStatus() == 200 && response.body().getData() != null) {
+                            if (response.body() != null  && response.body().getData() != null) {
                                 view.onSuccess(response.body().getData());
 
                             }

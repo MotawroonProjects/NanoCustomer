@@ -45,13 +45,13 @@ public class ActivityOrderDetailsPresenter {
         String user_id = String.valueOf(userModel.getData().getUser().getId());
         view.onProgressShow();
         Api.getService(Tags.base_url)
-                .getSingleOrders(String.valueOf(orderModel.getId()))
+                .getSingleOrders(userModel.getData().getToken(),String.valueOf(orderModel.getId()))
                 .enqueue(new Callback<SingleOrderModel>() {
                     @Override
                     public void onResponse(Call<SingleOrderModel> call, Response<SingleOrderModel> response) {
                         view.onProgressHide();
                         if (response.isSuccessful()) {
-                            if (response.body() != null && response.body().getStatus() == 200 && response.body().getOrder() != null) {
+                            if (response.body() != null && response.body().getOrder() != null) {
                                 view.onSuccess(response.body());
 
                             }

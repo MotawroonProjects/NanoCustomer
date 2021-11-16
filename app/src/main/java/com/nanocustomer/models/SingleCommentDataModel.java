@@ -3,11 +3,11 @@ package com.nanocustomer.models;
 import java.io.Serializable;
 
 public class SingleCommentDataModel implements Serializable {
-    private int status;
+    private boolean status;
     private String message;
     private CommentModel data;
 
-    public int getStatus() {
+    public boolean getStatus() {
         return status;
     }
 

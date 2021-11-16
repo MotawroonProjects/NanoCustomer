@@ -77,9 +77,9 @@ public class OrderDetailsActivity extends AppCompatActivity implements ActivityO
         orderModel = data.getOrder();
         binding.setModel(orderModel);
 
-        if (data.getOrder().getNew_cart()!=null&&data.getOrder().getNew_cart().size()>0){
+        if (data.getOrder().getProducts()!=null&&data.getOrder().getProducts().size()>0){
             cartProductModelList.clear();
-            cartProductModelList.addAll(data.getOrder().getNew_cart());
+            cartProductModelList.addAll(data.getOrder().getProducts());
             adapter.notifyDataSetChanged();
 
         }

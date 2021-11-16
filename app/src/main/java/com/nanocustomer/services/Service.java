@@ -64,7 +64,7 @@ public interface Service {
 
     @FormUrlEncoded
     @POST("api/user/login")
-    Call<UserModel> login(@Field("phone") String phone,
+    Call<UserModel> login(@Field("email") String email,
                           @Field("password") String password
     );
 
@@ -182,19 +182,18 @@ public interface Service {
     );
 
     @FormUrlEncoded
-    @POST("api/user/StoreContact")
+    @POST("api/front/contactmail")
     Call<ResponseBody> contactUs(@Field("name") String name,
                                  @Field("email") String email,
                                  @Field("phone") String phone,
-                                 @Field("text") String message
+                                 @Field("message") String message
     );
 
     @FormUrlEncoded
-    @POST("api/user/StoreComment")
+    @POST("api/user/commentstore")
     Call<SingleCommentDataModel> addComment(@Header("Authorization") String token,
-                                            @Field("user_id") String user_id,
                                             @Field("product_id") String product_id,
-                                            @Field("text") String message
+                                            @Field("comment") String comment
     );
 
 
@@ -223,18 +222,20 @@ public interface Service {
     );
 
 
-    @POST("api/user/StoreOrder")
+    @POST("api/user/storeOrder")
     Call<SingleOrderModel> sendOrder(@Header("Authorization") String token,
                                      @Body SendCartModel body);
 
 
-    @GET("api/user/GetOrders")
+    @GET("api/user/orders")
     Call<OrderDataModel> getOrders(@Header("Authorization") String token,
                                    @Query("user_id") String user_id
     );
 
-    @GET("api/user/OneOrder")
-    Call<SingleOrderModel> getSingleOrders(@Query("order_id") String order_id
+    @GET("api/user/order/{id}/details")
+    Call<SingleOrderModel> getSingleOrders(
+            @Header("Authorization") String token,
+            @Path("id") String id
     );
 
     @GET("api/front/{id}/category")

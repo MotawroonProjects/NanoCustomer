@@ -83,7 +83,10 @@ public class CartActivity extends AppCompatActivity implements CartActivityView 
                 presenter.checkCoupon(code);
             }
         });
-        binding.btnNext.setOnClickListener(view -> presenter.checkOut());
+        binding.btnNext.setOnClickListener(view -> {
+           // presenter.checkOut();
+            presenter.sendOrder();
+        });
     }
 
     @Override
@@ -111,7 +114,7 @@ public class CartActivity extends AppCompatActivity implements CartActivityView 
         cartModelList.addAll(cartDataModel.getCartModelList());
         if (cartModelList.size()>0){
             adapter.notifyDataSetChanged();
-            binding.llCoupon.setVisibility(View.VISIBLE);
+            binding.llCoupon.setVisibility(View.GONE);
             binding.llCost.setVisibility(View.VISIBLE);
             binding.llEmptyCart.setVisibility(View.GONE);
         }else {
@@ -213,20 +216,20 @@ public class CartActivity extends AppCompatActivity implements CartActivityView 
     @Override
     public void onOrderSendSuccessfully(SingleOrderModel singleOrderModel) {
 
-        Log.e("ccccccc",payment_type+"___");
-        if (payment_type==1){
-            Intent intent = new Intent(this, WebViewActivity.class);
-            intent.putExtra("url","http://nanocustomergy.com/api/paymob-check/"+singleOrderModel.getOrder().getId());
-            startActivity(intent);
-            finish();
-            Log.e("url","http://nanocustomergy.com/api/paymob-check/"+singleOrderModel.getOrder().getId());
-        }else {
+//        Log.e("ccccccc",payment_type+"___");
+//        if (payment_type==1){
+//            Intent intent = new Intent(this, WebViewActivity.class);
+//            intent.putExtra("url","http://nanocustomergy.com/api/paymob-check/"+singleOrderModel.getOrder().getId());
+//            startActivity(intent);
+//            finish();
+//            Log.e("url","http://nanocustomergy.com/api/paymob-check/"+singleOrderModel.getOrder().getId());
+//        }else {
             Toast.makeText(this, getString(R.string.suc), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, OrderDetailsActivity.class);
-            intent.putExtra("data",singleOrderModel.getOrder());
+            intent.putExtra("data",singleOrderModel.getData());
             startActivity(intent);
             finish();
-        }
+//        }
 
     }
 

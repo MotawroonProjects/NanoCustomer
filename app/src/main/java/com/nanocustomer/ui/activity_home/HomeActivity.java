@@ -16,6 +16,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.nanocustomer.preferences.Preferences;
 import com.nanocustomer.tags.Tags;
 import com.nanocustomer.ui.activity_cart.CartActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -36,6 +37,7 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityView 
     private ActivityHomePresenter presenter;
     private double lat = 0.0, lng = 0.0;
     private boolean onCategorySelected = false;
+    private Preferences preference;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -67,6 +69,7 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityView 
 
     private void initView()
     {
+        preference=Preferences.getInstance();
         fragmentManager = getSupportFragmentManager();
         presenter = new ActivityHomePresenter(this, this, fragmentManager, lat, lng);
         binding.navigationView.setOnNavigationItemSelectedListener(item -> {
@@ -138,6 +141,7 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityView 
 
     @Override
     public void onNavigateToLoginActivity() {
+        preference.clear(this);
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();

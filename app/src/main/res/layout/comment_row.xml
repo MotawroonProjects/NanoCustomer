@@ -1,72 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="model"
             type="com.nanocustomer.models.CommentModel" />
     </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_margin="5dp"
+            android:orientation="horizontal"
 
             >
+
             <de.hdodenhof.circleimageview.CircleImageView
+                image="@{model.user_image}"
+                type="@{1}"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/ic_avatar"
+                android:src="@drawable/ic_avatar" />
 
-                />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
-                >
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
+                    android:singleLine="true"
+                    android:text="@{model.name}"
                     android:textColor="@color/black"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintHorizontal_bias="0"
-                    app:layout_constraintWidth_default="wrap"
-                    android:singleLine="true"
-                    android:text="@{model.user.full_name}"
-                    />
+                    app:layout_constraintWidth_default="wrap" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:text="@{model.comment}"
                     android:textColor="@color/gray8"
-                    android:textSize="14sp"
-                    android:text="@{model.text}"
-                    />
+                    android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="5dp"
+            android:orientation="horizontal"
 
             >
+
             <Space
                 android:layout_width="60dp"
-                android:layout_height="0dp"/>
+                android:layout_height="0dp" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"
-                android:background="@color/gray3"
-                />
+                android:background="@color/gray3" />
         </LinearLayout>
     </LinearLayout>
 </layout>

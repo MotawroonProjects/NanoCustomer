@@ -14,6 +14,7 @@ public class ProductModel implements Serializable {
     private String policy;
     private String details;
     private List<GalleryModel> images;
+    private List<CommentModel> comments;
 
     public int getId() {
         return id;
@@ -53,5 +54,9 @@ public class ProductModel implements Serializable {
 
     public String getDetails() {
         return details;
+    }
+
+    public List<CommentModel> getComments() {
+        return comments;
     }
 }

@@ -4,84 +4,100 @@ import java.io.Serializable;
 import java.util.List;
 
 public class OrderModel implements Serializable {
-    private int id;
-    private String user_id;
-    private String method;
-    private String pay_amount;
-    private String order_number;
-    private String payment_status;
-    private String customer_phone;
-    private String customer_address;
-    private String shipping_cost;
-    private String packing_cost;
-    private String status;
-    private String coupon_discount;
-    private String net_cost;
-    private List<CartProductModel> new_cart;
+    public int id;
+    public String number;
+    public String total;
+    public String status;
+    public String details;
+    public List<CartProductModel> products;
+
+    public String payment_url;
 
     public int getId() {
         return id;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getNumber() {
+        return number;
     }
 
-    public String getMethod() {
-        return method;
-    }
-
-    public String getPay_amount() {
-        return pay_amount;
-    }
-
-    public String getOrder_number() {
-        return order_number;
-    }
-
-    public String getPayment_status() {
-        return payment_status;
-    }
-
-    public String getCustomer_phone() {
-        return customer_phone;
-    }
-
-    public String getCustomer_address() {
-        return customer_address;
-    }
-
-    public String getShipping_cost() {
-        return shipping_cost;
-    }
-
-    public String getPacking_cost() {
-        return packing_cost;
-    }
-
-    public List<CartProductModel> getNew_cart() {
-        return new_cart;
+    public String getTotal() {
+        return total;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public String getNet_cost() {
-        return net_cost;
+    public String getDetails() {
+        return details;
     }
 
-    public String getCoupon_discount() {
-        return coupon_discount;
+    public List<CartProductModel> getProducts() {
+        return products;
+    }
+
+    public String getPayment_url() {
+        return payment_url;
     }
 
     public static class CartProductModel implements Serializable{
+        private int qty;
+        private int size_key;
+        private String size_qty;
+        private String size_price;
+        private String size;
+        private String color;
+        private String stock;
+        private String keys;
+        private String values;
+        private String item_price;
         private int id;
         private String name;
-        private String photo;
-        private String price;
-        private String product_counts;
+        private String vendor_id;
+        private String type;
+        private String feature_image;
+        private double total_price;
 
+        public int getQty() {
+            return qty;
+        }
+
+        public int getSize_key() {
+            return size_key;
+        }
+
+        public String getSize_qty() {
+            return size_qty;
+        }
+
+        public String getSize_price() {
+            return size_price;
+        }
+
+        public String getSize() {
+            return size;
+        }
+
+        public String getColor() {
+            return color;
+        }
+
+        public String getStock() {
+            return stock;
+        }
+
+        public String getKeys() {
+            return keys;
+        }
+
+        public String getValues() {
+            return values;
+        }
+
+        public String getItem_price() {
+            return item_price;
+        }
 
         public int getId() {
             return id;
@@ -91,16 +107,20 @@ public class OrderModel implements Serializable {
             return name;
         }
 
-        public String getPhoto() {
-            return photo;
+        public String getVendor_id() {
+            return vendor_id;
         }
 
-        public String getPrice() {
-            return price;
+        public String getType() {
+            return type;
         }
 
-        public String getProduct_counts() {
-            return product_counts;
+        public String getFeature_image() {
+            return feature_image;
+        }
+
+        public double getTotal_price() {
+            return total_price;
         }
     }
 

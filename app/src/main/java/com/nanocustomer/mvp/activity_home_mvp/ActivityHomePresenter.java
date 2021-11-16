@@ -256,68 +256,70 @@ public class ActivityHomePresenter {
 
     public void logout()
     {
+        view.onNavigateToLoginActivity();
+
         if (userModel==null){
             view.onNavigateToLoginActivity();
             return;
         }
-        ProgressDialog dialog = Common.createProgressDialog(context,context.getString(R.string.wait));
-        dialog.setCanceledOnTouchOutside(false);
-        dialog.setCancelable(false);
-        dialog.show();
-        Api.getService(Tags.base_url)
-                .logout(userModel.getData().getToken(),userModel.getData().getUser().getId(),userModel.getData().getUser().getFirebase_token(),"android")
-                .enqueue(new Callback<LogoutModel>() {
-                    @Override
-                    public void onResponse(Call<LogoutModel> call, Response<LogoutModel> response) {
-                        dialog.dismiss();
-                        if (response.isSuccessful()) {
-                            if (response.body() != null) {
-                                if (response.body().getStatus()==200){
-                                    preference.clear(context);
-                                    view.onNavigateToLoginActivity();
-                                }else {
-                                    view.onFailed(context.getString(R.string.failed));
-                                }
-                            }
-
-
-                        } else {
-
-                            try {
-                                Log.e("errorNotCode", response.code() + "__" + response.errorBody().string());
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-
-
-                            if (response.code() == 500) {
-                                view.onFailed("Server Error");
-                            } else {
-                                view.onFailed(context.getString(R.string.failed));
-
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<LogoutModel> call, Throwable t) {
-                        try {
-                            dialog.dismiss();
-                            if (t.getMessage() != null) {
-                                Log.e("error_not_code", t.getMessage() + "__");
-
-                                if (t.getMessage().toLowerCase().contains("failed to connect") || t.getMessage().toLowerCase().contains("unable to resolve host")) {
-                                    view.onFailed(context.getString(R.string.something));
-                                } else {
-                                    view.onFailed(context.getString(R.string.failed));
-
-                                }
-                            }
-                        } catch (Exception e) {
-                            Log.e("Error", e.getMessage() + "__");
-                        }
-                    }
-                });
+//        ProgressDialog dialog = Common.createProgressDialog(context,context.getString(R.string.wait));
+//        dialog.setCanceledOnTouchOutside(false);
+//        dialog.setCancelable(false);
+//        dialog.show();
+//        Api.getService(Tags.base_url)
+//                .logout(userModel.getData().getToken(),userModel.getData().getUser().getId(),userModel.getData().getUser().getFirebase_token(),"android")
+//                .enqueue(new Callback<LogoutModel>() {
+//                    @Override
+//                    public void onResponse(Call<LogoutModel> call, Response<LogoutModel> response) {
+//                        dialog.dismiss();
+//                        if (response.isSuccessful()) {
+//                            if (response.body() != null) {
+//                                if (response.body().getStatus()==200){
+//                                    preference.clear(context);
+//                                    view.onNavigateToLoginActivity();
+//                                }else {
+//                                    view.onFailed(context.getString(R.string.failed));
+//                                }
+//                            }
+//
+//
+//                        } else {
+//
+//                            try {
+//                                Log.e("errorNotCode", response.code() + "__" + response.errorBody().string());
+//                            } catch (IOException e) {
+//                                e.printStackTrace();
+//                            }
+//
+//
+//                            if (response.code() == 500) {
+//                                view.onFailed("Server Error");
+//                            } else {
+//                                view.onFailed(context.getString(R.string.failed));
+//
+//                            }
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<LogoutModel> call, Throwable t) {
+//                        try {
+//                            dialog.dismiss();
+//                            if (t.getMessage() != null) {
+//                                Log.e("error_not_code", t.getMessage() + "__");
+//
+//                                if (t.getMessage().toLowerCase().contains("failed to connect") || t.getMessage().toLowerCase().contains("unable to resolve host")) {
+//                                    view.onFailed(context.getString(R.string.something));
+//                                } else {
+//                                    view.onFailed(context.getString(R.string.failed));
+//
+//                                }
+//                            }
+//                        } catch (Exception e) {
+//                            Log.e("Error", e.getMessage() + "__");
+//                        }
+//                    }
+//                });
 
 
     }

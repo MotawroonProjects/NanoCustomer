@@ -87,8 +87,8 @@ public class SignUpActivity extends AppCompatActivity implements ActivitySignUpV
         binding.btnSignUp.setOnClickListener(view -> {
             if (model.isDataValid(this)) {
                 Common.CloseKeyBoard(this, binding.edtPhone);
-                presenter.sign_up(model);
-              //  navigateToConfirmCodeActivity();
+               // presenter.sign_up(model);
+                navigateToConfirmCodeActivity();
             }
         });
         binding.tvLogin.setOnClickListener(view -> {

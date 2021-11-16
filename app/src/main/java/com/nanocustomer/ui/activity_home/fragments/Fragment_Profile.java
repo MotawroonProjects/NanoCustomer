@@ -70,9 +70,9 @@ public class Fragment_Profile extends Fragment implements Listeners.ProfileActio
         if (userModel!=null){
             binding.setModel(userModel);
             binding.llLogout.setVisibility(View.VISIBLE);
-            binding.cardBaarcode.setVisibility(View.VISIBLE);
-            binding.lluser.setVisibility(View.VISIBLE);
-            binding.fluser.setVisibility(View.GONE);
+            binding.cardBaarcode.setVisibility(View.GONE);
+            binding.lluser.setVisibility(View.GONE);
+            binding.fluser.setVisibility(View.VISIBLE);
 
         }else{
             binding.llLogout.setVisibility(View.GONE);
@@ -84,8 +84,10 @@ public class Fragment_Profile extends Fragment implements Listeners.ProfileActio
         binding.fluser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if(userModel==null){
                 activity.onNavigateToLoginActivity();
-            }
+            }}
         });
         binding.setActions(this);
         getSocialSetting();

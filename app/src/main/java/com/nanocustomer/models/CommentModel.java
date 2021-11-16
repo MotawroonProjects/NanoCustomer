@@ -4,28 +4,38 @@ import java.io.Serializable;
 
 public class CommentModel implements Serializable {
     private int id;
+    private String user_image;
     private String user_id;
-    private String product_id;
-    private String text;
-    private UserModel.Data.User user;
+    private String name;
+    private String comment;
+    private String created_at;
+    private String updated_at;
 
     public int getId() {
         return id;
+    }
+
+    public String getUser_image() {
+        return user_image;
     }
 
     public String getUser_id() {
         return user_id;
     }
 
-    public String getProduct_id() {
-        return product_id;
+    public String getName() {
+        return name;
     }
 
-    public String getText() {
-        return text;
+    public String getComment() {
+        return comment;
     }
 
-    public UserModel.Data.User getUser() {
-        return user;
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public String getUpdated_at() {
+        return updated_at;
     }
 }

@@ -144,45 +144,12 @@
                             android:textColor="@color/black"
                             android:layout_weight=".5"
                             android:layout_gravity="top"
-                            android:text='@{(model.net_cost!=null?model.net_cost:"0.00")+" "+@string/sar}'
+                            android:text='@{(model.total!=null?model.total:"0.00")+" "+@string/sar}'
                             />
 
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        >
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
-                            android:textColor="@color/gray8"
-                            android:layout_weight=".5"
-                            android:text="@string/discount2"
-                            android:layout_gravity="top"
-                            />
-
-                        <TextView
-                            android:id="@+id/tvDiscount"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:textSize="15sp"
-                            android:textColor="@color/black"
-                            android:layout_weight=".5"
-                            android:layout_gravity="top"
-                            android:text='@{(model.coupon_discount!=null?model.coupon_discount:"0.00")+" "+@string/sar}'
-
-                            />
-
-
-                    </LinearLayout>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1px"
@@ -190,44 +157,6 @@
                         android:layout_marginTop="3dp"
                         android:layout_marginBottom="3dp"/>
 
-                    <LinearLayout
-                        android:id="@+id/llDelivery"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-
-                        >
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
-                            android:textColor="@color/gray8"
-                            android:layout_weight=".5"
-                            android:text="@string/delivery"
-                            android:layout_gravity="top"
-                            />
-
-                        <TextView
-                            android:id="@+id/tvDelivery"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:textSize="15sp"
-                            android:textColor="@color/black"
-                            android:layout_weight=".5"
-                            android:layout_gravity="top"
-                            android:text='@{(model.shipping_cost!=null?model.shipping_cost:"0.00")+" "+@string/sar}'
-
-
-                            />
-
-
-
-
-                    </LinearLayout>
                     <View
                         android:id="@+id/viewDelivery"
                         android:layout_width="match_parent"
@@ -239,41 +168,6 @@
 
                         />
 
-                    <LinearLayout
-                        android:id="@+id/llPackaging"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-
-                        >
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
-                            android:textColor="@color/gray8"
-                            android:layout_weight=".5"
-                            android:text="@string/packaging"
-                            android:layout_gravity="top"
-                            />
-
-                        <TextView
-                            android:id="@+id/tvPackaging"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:textSize="15sp"
-                            android:textColor="@color/black"
-                            android:layout_weight=".5"
-                            android:layout_gravity="top"
-                            android:text='@{(model.packing_cost!=null?model.packing_cost:"0.00")+" "+@string/sar}'
-
-                            />
-
-
-                    </LinearLayout>
                     <View
                         android:id="@+id/viewPackaging"
                         android:layout_width="match_parent"
@@ -312,7 +206,7 @@
                             android:layout_weight=".5"
                             android:layout_gravity="top"
                             android:textStyle="bold"
-                            android:text='@{(model.pay_amount!=null?model.pay_amount:"0.00")+" "+@string/sar}'
+                            android:text='@{(model.total!=null?model.total:"0.00")+" "+@string/sar}'
 
 
                             />

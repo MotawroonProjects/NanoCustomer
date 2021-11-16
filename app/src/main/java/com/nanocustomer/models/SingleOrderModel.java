@@ -5,20 +5,15 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class SingleOrderModel implements Serializable {
-    @SerializedName(value = "data", alternate = {"order"})
     private OrderModel data;
-    private int status;
-    private String message;
+    private OrderModel order;
+
 
     public OrderModel getOrder() {
         return data;
     }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public String getMessage() {
-        return message;
+    public OrderModel getData() {
+        return order;
     }
 }

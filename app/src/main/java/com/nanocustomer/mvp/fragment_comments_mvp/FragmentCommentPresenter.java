@@ -43,7 +43,7 @@ public class FragmentCommentPresenter {
 
     public void add_comment(String comment,ProductModel productModel)
     {
-
+Log.e("dddd",userModel.getData().getToken());
         if (userModel==null){
             return;
         }
@@ -53,13 +53,13 @@ public class FragmentCommentPresenter {
         dialog.show();
         String user_id = String.valueOf(userModel.getData().getUser().getId());
         Api.getService(Tags.base_url)
-                .addComment(userModel.getData().getToken(),user_id, String.valueOf(productModel.getId()),comment)
+                .addComment( userModel.getData().getToken(), String.valueOf(productModel.getId()),comment)
                 .enqueue(new Callback<SingleCommentDataModel>() {
                     @Override
                     public void onResponse(Call<SingleCommentDataModel> call, Response<SingleCommentDataModel> response) {
                         if (response.isSuccessful()) {
                             dialog.dismiss();
-                            if (response.body() != null&&response.body().getStatus()==200) {
+                            if (response.body() != null&&response.body().getStatus()) {
                                 view.onSuccess(response.body().getData());
                             }
 

@@ -8,7 +8,11 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/drawable/ic_line2.xml" value="0.2846153846153846" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/drawable/item_nav_bg.xml" value="0.15885416666666666" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/activity_add_address.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/activity_cart.xml" value="0.1390625" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/activity_order_checkout.xml" value="0.1390625" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/activity_order_details.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/activity_order_steps.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/activity_product_details.xml" value="0.1484375" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/activity_splash.xml" value="0.14270833333333333" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/bottom_image_row.xml" value="0.1484375" />
@@ -18,12 +22,13 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/fragment_policy.xml" value="0.1484375" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/main_category_row.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/order_row.xml" value="0.1484375" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/product_favorite_row.xml" value="0.1484375" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/product_menu_row.xml" value="0.1484375" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/product_offer_row.xml" value="0.1484375" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/product_row.xml" value="0.1484375" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/product_row2.xml" value="0.1484375" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/product_row3.xml" value="0.1484375" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/product_row3.xml" value="0.33" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/search_row.xml" value="0.1484375" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/slider_row.xml" value="0.1484375" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/NanoCustomer/app/src/main/res/layout/ss.xml" value="0.27291666666666664" />

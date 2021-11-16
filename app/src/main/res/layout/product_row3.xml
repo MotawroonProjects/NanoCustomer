@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_gravity="center_horizontal"
-                image="@{model.photo}"
+                image="@{model.feature_image}"
                 type="@{3}"
                 />
 
@@ -86,7 +86,7 @@
                         android:gravity="center"
                         android:textStyle="bold"
                         android:singleLine="true"
-                        android:text='@{model.product_counts}'
+                        android:text='@{model.qty+""}'
                         android:textColor="@color/black"
                         android:textSize="15sp"
 
@@ -116,7 +116,7 @@
                         android:gravity="center"
                         android:textStyle="bold"
                         android:singleLine="true"
-                        android:text='@{model.price+" "+@string/sar}'
+                        android:text='@{model.item_price+" "+@string/sar}'
                         android:textColor="@color/black"
                         android:textSize="15sp"
 
@@ -147,8 +147,7 @@
                         android:gravity="center"
                         android:textStyle="bold"
                         android:singleLine="true"
-                        amount="@{Integer.parseInt(model.product_counts)}"
-                        price="@{Double.parseDouble(model.price)}"
+                        android:text='@{model.total_price+""}'
                         android:textColor="@color/black"
                         android:textSize="18sp"
 

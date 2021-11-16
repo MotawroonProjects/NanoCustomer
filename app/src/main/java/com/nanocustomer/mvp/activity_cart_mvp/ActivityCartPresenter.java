@@ -264,11 +264,11 @@ public class ActivityCartPresenter {
                         dialog.dismiss();
                         if (response.isSuccessful()) {
 
-                            if (response.body() != null && response.body().getStatus() == 200) {
+                            if (response.body() != null) {
+                                Log.e("ddddddd", response+"____");
+                                Log.e("ccccccc", response.code()+"____");
+                                if (response.body().getData() != null) {
 
-                                if (response.body().getOrder() != null) {
-                                    Log.e("ddddddd", response+"____");
-                                    Log.e("ccccccc", response.code()+"____");
 
                                     view.onOrderSendSuccessfully(response.body());
                                     preferences.clearCart(context);
@@ -280,8 +280,8 @@ public class ActivityCartPresenter {
 
                                 }
 
-                            }else if (response.body() != null && response.body().getStatus() == 400){
-                                Toast.makeText(context, response.body().getMessage()+"", Toast.LENGTH_SHORT).show();
+                            }else if (response.body() != null ){
+                               // Toast.makeText(context, response.body().getMessage()+"", Toast.LENGTH_SHORT).show();
 
                             }
 
@@ -333,7 +333,7 @@ public class ActivityCartPresenter {
 
             for (int index=0;index<model.getAmount();index++){
                 String product_id = model.getId();
-                cartList.add(new SendCartModel.Cart(product_id));
+                cartList.add(new SendCartModel.Cart(product_id,model.getAmount()));
             }
 
         }

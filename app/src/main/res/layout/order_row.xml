@@ -65,11 +65,12 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
+                            android:layout_gravity="end"
                             android:layout_weight=".65"
                             android:ellipsize="end"
+                            android:gravity="end"
                             android:maxLines="2"
-                            android:text='@{"#"+model.order_number}'
+                            android:text='@{"#"+model.id}'
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
@@ -102,6 +103,7 @@
                             android:layout_weight=".65"
                             android:ellipsize="end"
                             android:maxLines="2"
+
                             android:text='@{model.status}'
                             android:textColor="@color/black"
                             android:textSize="15sp" />
@@ -135,7 +137,7 @@
                             android:layout_weight=".65"
                             android:ellipsize="end"
                             android:maxLines="2"
-                            android:text='@{model.pay_amount+" "+@string/sar}'
+                            android:text='@{model.total+" "+@string/sar}'
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:textStyle="bold" />

@@ -126,9 +126,9 @@ package="com.nanocustomer">
         android:windowSoftInputMode="adjustPan" />
     <activity
         android:name=".ui.activity_sign_up.SignUpActivity"
-        android:configChanges="orientation|screenSize|keyboardHidden"
         android:screenOrientation="portrait"
-        android:windowSoftInputMode="adjustPan" />
+        android:configChanges="keyboardHidden|screenSize|orientation"
+        android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
     <activity
         android:name=".ui.activity_order_steps.OrderStepsActivity"
         android:configChanges="orientation|screenSize|keyboardHidden"

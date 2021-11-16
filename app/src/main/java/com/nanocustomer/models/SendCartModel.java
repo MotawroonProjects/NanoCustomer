@@ -17,7 +17,7 @@ public class SendCartModel implements Serializable {
     private String net_cost;
     private List<Cart> cart;
 
-    public SendCartModel(String user_id, String total, String customer_address, String shipping_address, String shipping_cost, String packing_cost, String phone, String coupon_code,int coupon_id, String coupon_discount,String net_cost, List<Cart> cart) {
+    public SendCartModel(String user_id, String total, String customer_address, String shipping_address, String shipping_cost, String packing_cost, String phone, String coupon_code, int coupon_id, String coupon_discount, String net_cost, List<Cart> cart) {
         this.user_id = user_id;
         this.total = total;
         this.customer_address = customer_address;
@@ -26,7 +26,7 @@ public class SendCartModel implements Serializable {
         this.packing_cost = packing_cost;
         this.phone = phone;
         this.coupon_code = coupon_code;
-        this.coupon_id=coupon_id;
+        this.coupon_id = coupon_id;
         this.coupon_discount = coupon_discount;
         this.net_cost = net_cost;
         this.cart = cart;
@@ -80,15 +80,21 @@ public class SendCartModel implements Serializable {
         return cart;
     }
 
-    public static class Cart implements Serializable{
+    public static class Cart implements Serializable {
         private String id;
+        private int qty;
 
-        public Cart(String id) {
+        public Cart(String id, int qty) {
             this.id = id;
+            this.qty = qty;
         }
 
         public String getId() {
             return id;
+        }
+
+        public int getQty() {
+            return qty;
         }
     }
 }
