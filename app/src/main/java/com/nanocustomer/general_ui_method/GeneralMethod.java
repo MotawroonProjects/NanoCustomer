@@ -2,6 +2,7 @@ package com.nanocustomer.general_ui_method;
 
 import android.net.Uri;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -204,6 +205,27 @@ public class GeneralMethod {
     public static void calculateCartItemCost(TextView textView, int amount, double price) {
         double cost = amount * price;
         textView.setText(String.format(Locale.ENGLISH, "%.2f %s", cost, textView.getContext().getString(R.string.sar)));
+    }
+    @BindingAdapter("order_status")
+    public static void orderStatus(TextView textView, String status) {
+        if (status.equals("pending")){
+            textView.setText(textView.getContext().getString(R.string.order_sent));
+        }else if (status.equals("processing")){
+            textView.setText(textView.getContext().getString(R.string.order_accepted));
+
+        }
+        else if (status.equals("declined")){
+            textView.setText(textView.getContext().getString(R.string.refused));
+
+        }
+        else if (status.equals("on delivery")){
+            textView.setText(textView.getContext().getString(R.string.order_in_way));
+
+        }
+        else if (status.equals("completed")){
+            textView.setText(textView.getContext().getString(R.string.order_successfuly));
+
+        }
     }
 
 

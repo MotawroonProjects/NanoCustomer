@@ -172,5 +172,7 @@
     <string name="not_avail_now">غير متاح حاليا</string>
     <string name="best_seller">Best Seller</string>
     <string name="special_offers">Special Offer</string>
+    <string name="refused">Order Refused</string>
+    <string name="order_sent">Order Sent</string>
 
 </resources>

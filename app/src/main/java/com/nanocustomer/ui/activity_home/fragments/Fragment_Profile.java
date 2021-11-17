@@ -28,6 +28,7 @@ import com.nanocustomer.tags.Tags;
 import com.nanocustomer.ui.activity_add_address.AddAddressActivity;
 import com.nanocustomer.ui.activity_address.AddressActivity;
 import com.nanocustomer.ui.activity_contact_us.ContactUsActivity;
+import com.nanocustomer.ui.activity_edit_profile.EditprofileActivity;
 import com.nanocustomer.ui.activity_favorite.FavoriteActivity;
 import com.nanocustomer.ui.activity_home.HomeActivity;
 import com.nanocustomer.ui.activity_language.LanguageActivity;
@@ -87,8 +88,15 @@ public class Fragment_Profile extends Fragment implements Listeners.ProfileActio
 
                 if(userModel==null){
                 activity.onNavigateToLoginActivity();
-            }}
+            }
+                else{
+                    Intent intent=new Intent(activity, EditprofileActivity.class);
+                    startActivity(intent);
+                }
+
+            }
         });
+
         binding.setActions(this);
         getSocialSetting();
     }
@@ -173,7 +181,7 @@ public class Fragment_Profile extends Fragment implements Listeners.ProfileActio
     @Override
     public void onFacebook() {
         if (socialSettingModel != null && socialSettingModel.getData() != null && socialSettingModel.getData().getFacebook() != null && !socialSettingModel.getData().getFacebook().equals("#")) {
-            open("http:"+ socialSettingModel.getData().getFacebook());
+            open(socialSettingModel.getData().getFacebook());
         } else {
             Toast.makeText(activity, R.string.not_avail_now, Toast.LENGTH_SHORT).show();
         }
@@ -182,7 +190,7 @@ public class Fragment_Profile extends Fragment implements Listeners.ProfileActio
     @Override
     public void onYoutube() {
         if (socialSettingModel != null && socialSettingModel.getData() != null && socialSettingModel.getData().getTwitter() != null && !socialSettingModel.getData().getTwitter().equals("#")) {
-            open("http:"+socialSettingModel.getData().getTwitter());
+            open(socialSettingModel.getData().getTwitter());
         } else {
             Toast.makeText(activity, R.string.not_avail_now, Toast.LENGTH_SHORT).show();
         }
@@ -191,7 +199,7 @@ public class Fragment_Profile extends Fragment implements Listeners.ProfileActio
     @Override
     public void onTiktok() {
         if (socialSettingModel != null && socialSettingModel.getData() != null && socialSettingModel.getData().getLinkedin() != null && !socialSettingModel.getData().getLinkedin().equals("#")) {
-            open("http:"+socialSettingModel.getData().getLinkedin());
+            open(socialSettingModel.getData().getLinkedin());
         } else {
             Toast.makeText(activity, R.string.not_avail_now, Toast.LENGTH_SHORT).show();
         }
@@ -201,7 +209,7 @@ public class Fragment_Profile extends Fragment implements Listeners.ProfileActio
     @Override
     public void onInstagram() {
         if (socialSettingModel != null && socialSettingModel.getData() != null && socialSettingModel.getData().getGplus() != null && !socialSettingModel.getData().getGplus().equals("#")) {
-            open("http:"+socialSettingModel.getData().getGplus());
+            open(socialSettingModel.getData().getGplus());
         } else {
             Toast.makeText(activity, R.string.not_avail_now, Toast.LENGTH_SHORT).show();
         }
@@ -229,7 +237,7 @@ public class Fragment_Profile extends Fragment implements Listeners.ProfileActio
         dialog.setCancelable(true);
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
-        Api.getService(Tags.base_url).getSocialSetting()
+        Api.getService(Tags.base_url).getSocialSetting("socialsettings")
                 .enqueue(new Callback<SocialSettingsModel>() {
                     @Override
                     public void onResponse(Call<SocialSettingsModel> call, Response<SocialSettingsModel> response) {
@@ -280,5 +288,14 @@ public class Fragment_Profile extends Fragment implements Listeners.ProfileActio
     private void open(String path) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(path));
         startActivity(intent);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(preferences!=null){
+            userModel=preferences.getUserData(activity);
+            binding.setModel(userModel);
+        }
     }
 }

@@ -56,7 +56,7 @@ public class ActivityEditprofilePresenter {
     private void editprofile(EditProfileModel editProfileModel, UserModel userModel) {
         view.onLoad();
         Api.getService(Tags.base_url)
-                .Editprofile(userModel.getData().getToken(), userModel.getData().getUser().getId() + "", editProfileModel.getName(), editProfileModel.getEmail(), editProfileModel.getPassword())
+                .Editprofile(userModel.getData().getToken(), editProfileModel.getName(), editProfileModel.getEmail())
                 .enqueue(new Callback<UserModel>() {
                     @Override
                     public void onResponse(Call<UserModel> call, Response<UserModel> response) {
@@ -125,7 +125,7 @@ public class ActivityEditprofilePresenter {
 
 
         Api.getService(Tags.base_url)
-                .updateProfileWithImage(userModel.getData().getToken(), user_id, name_part, email_part, password_part, image)
+                .updateProfileWithImage(userModel.getData().getToken(), name_part, email_part, image)
                 .enqueue(new Callback<UserModel>() {
                     @Override
                     public void onResponse(Call<UserModel> call, Response<UserModel> response) {

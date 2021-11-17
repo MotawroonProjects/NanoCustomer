@@ -99,7 +99,7 @@ package="com.nanocustomer">
             <category android:name="android.intent.category.BROWSABLE" />
 
             <data
-                android:host="athomegy.com"
+                android:host="nano-techegy.com"
                 android:pathPrefix="/api/shareLink/"
                 android:scheme="http" />
         </intent-filter>

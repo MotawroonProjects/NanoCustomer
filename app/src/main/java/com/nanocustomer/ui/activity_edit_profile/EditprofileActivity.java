@@ -304,7 +304,7 @@ public class EditprofileActivity extends AppCompatActivity implements Editprofil
         model.setName(userModel.getData().getUser().getFull_name());
         model.setEmail(userModel.getData().getUser().getEmail());
 
-      //  Picasso.get().load(Tags.IMAGE_User_URL+userModel.getData().getUser().getPhoto()).placeholder(R.drawable.ic_user).into(binding.image);
+        Picasso.get().load(Tags.IMAGE_User_URL+userModel.getData().getUser().getPropic()).placeholder(R.drawable.ic_user).into(binding.image);
         binding.setEditModel(model);
 
     }

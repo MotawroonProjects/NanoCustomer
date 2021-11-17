@@ -253,23 +253,19 @@ public interface Service {
     Call<BottomImageDataModel> getBottomImages();
 
     @FormUrlEncoded
-    @POST("api/user/update-profile")
+    @POST("api/user/profile/update")
     Call<UserModel> Editprofile(
             @Header("Authorization") String Authorization,
-            @Field("user_id") String user_id,
             @Field("name") String name,
-            @Field("email") String email,
-            @Field("password") String password
+            @Field("email") String email
 
     );
 
     @Multipart
-    @POST("api/user/update-profile")
+    @POST("api/user/profile/update")
     Call<UserModel> updateProfileWithImage(@Header("Authorization") String user_token,
-                                           @Part("user_id") RequestBody user_id,
                                            @Part("name") RequestBody name,
                                            @Part("email") RequestBody email,
-                                           @Part("password") RequestBody password,
                                            @Part MultipartBody.Part logo
 
 
@@ -282,6 +278,9 @@ public interface Service {
 
     );
 
-    @GET("api/user/socialSetting")
-    Call<SocialSettingsModel> getSocialSetting();
+    @GET("api/user/settings")
+    Call<SocialSettingsModel> getSocialSetting(
+            @Query("name") String name
+
+    );
 }

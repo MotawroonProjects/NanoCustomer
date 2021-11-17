@@ -117,7 +117,6 @@
                             app:civ_circle_background_color="@color/white" />
 
 
-
                         <ImageView
                             android:id="@+id/icon"
                             android:layout_width="40dp"
@@ -176,6 +175,7 @@
 
 
                     </LinearLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
@@ -188,6 +188,7 @@
                         tools:ignore="RtlCompat">
 
                         <EditText
+                            error="@{editModel.error_email}"
                             android:layout_width="match_parent"
                             android:layout_height="37dp"
                             android:background="@color/transparent"
@@ -195,48 +196,46 @@
                             android:inputType="textEmailAddress"
                             android:singleLine="true"
                             android:text="@={editModel.email}"
-                            error="@{editModel.error_email}"
                             android:textColor="@color/black"
                             android:textColorHint="@color/gray4"
-                            android:textSize="14sp"
-                            />
+                            android:textSize="14sp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardPassword"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:visibility="gone"
 
                         app:cardBackgroundColor="@color/white"
                         app:cardCornerRadius="25dp"
-
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="3dp"
                         app:contentPaddingLeft="8dp"
                         app:contentPaddingRight="8dp"
 
                         >
+
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            app:passwordToggleTint="@color/color1"
                             app:hintEnabled="false"
                             app:passwordToggleEnabled="true"
-                            app:startIconTint="@color/color1"
+                            app:passwordToggleTint="@color/color1"
                             app:startIconDrawable="@drawable/ic_lock"
-                            >
+                            app:startIconTint="@color/color1">
+
                             <EditText
                                 android:layout_width="match_parent"
                                 android:layout_height="37dp"
                                 android:background="@color/transparent"
+                                android:hint="@string/password"
                                 android:inputType="textPassword"
                                 android:singleLine="true"
-                                android:hint="@string/password"
-                                android:textSize="14sp"
-                                android:textColorHint="@color/gray4"
-                                android:textColor="@color/colorPrimary"
                                 android:text="@={editModel.password}"
-                                />
+                                android:textColor="@color/colorPrimary"
+                                android:textColorHint="@color/gray4"
+                                android:textSize="14sp" />
                         </com.google.android.material.textfield.TextInputLayout>
                     </androidx.cardview.widget.CardView>
 

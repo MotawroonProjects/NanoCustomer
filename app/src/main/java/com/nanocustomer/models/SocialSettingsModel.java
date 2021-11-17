@@ -4,44 +4,35 @@ import java.io.Serializable;
 
 public class SocialSettingsModel implements Serializable {
     public Data data;
-    public String message;
-    public int status;
+
 
     public Data getData() {
         return data;
     }
 
-    public String getMessage() {
-        return message;
-    }
 
-    public int getStatus() {
-        return status;
-    }
+    public class Data implements Serializable{
+        private String id;
+        private String facebook;
+        private String gplus;
+        private String twitter;
+        private String linkedin;
+        private String dribble;
+        private String f_status;
+        private String g_status;
+        private String t_status;
+        private String l_status;
+        private String d_status;
+        private String f_check;
+        private String g_check;
+        private String fclient_id;
+        private String fclient_secret;
+        private String fredirect;
+        private String gclient_id;
+        private String gclient_secret;
+        private String gredirect;
 
-    public class Data{
-        public int id;
-        public String facebook;
-        public String gplus;
-        public String twitter;
-        public String linkedin;
-        public String dribble;
-        public int f_status;
-        public int g_status;
-        public int t_status;
-        public int l_status;
-        public int d_status;
-        public int f_check;
-        public int g_check;
-        public String fclient_id;
-        public String fclient_secret;
-        public String fredirect;
-        public String gclient_id;
-        public String gclient_secret;
-        public String gredirect;
-
-
-        public int getId() {
+        public String getId() {
             return id;
         }
 
@@ -65,31 +56,31 @@ public class SocialSettingsModel implements Serializable {
             return dribble;
         }
 
-        public int getF_status() {
+        public String getF_status() {
             return f_status;
         }
 
-        public int getG_status() {
+        public String getG_status() {
             return g_status;
         }
 
-        public int getT_status() {
+        public String getT_status() {
             return t_status;
         }
 
-        public int getL_status() {
+        public String getL_status() {
             return l_status;
         }
 
-        public int getD_status() {
+        public String getD_status() {
             return d_status;
         }
 
-        public int getF_check() {
+        public String getF_check() {
             return f_check;
         }
 
-        public int getG_check() {
+        public String getG_check() {
             return g_check;
         }
 

@@ -3,8 +3,8 @@ package com.nanocustomer.models;
 import java.io.Serializable;
 
 public class UserModel implements Serializable {
-   private boolean status;
-   private Data data;
+    private boolean status;
+    private Data data;
 
     public boolean isStatus() {
         return status;
@@ -14,7 +14,7 @@ public class UserModel implements Serializable {
         return data;
     }
 
-    public class Data implements Serializable{
+    public class Data implements Serializable {
         public String token;
         public User user;
 
@@ -26,7 +26,7 @@ public class UserModel implements Serializable {
             return user;
         }
 
-        public class User implements Serializable{
+        public class User implements Serializable {
             private int id;
             private String full_name;
             private String phone;
@@ -46,6 +46,7 @@ public class UserModel implements Serializable {
             private String type;
             private String package_end_date;
             private String firebase_token;
+            private String photo;
 
             public int getId() {
                 return id;
@@ -125,6 +126,10 @@ public class UserModel implements Serializable {
 
             public void setFirebase_token(String firebase_token) {
                 this.firebase_token = firebase_token;
+            }
+
+            public String getPhoto() {
+                return photo;
             }
         }
     }

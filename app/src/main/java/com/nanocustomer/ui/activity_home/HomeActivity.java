@@ -185,4 +185,10 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityView 
         super.onDestroy();
         presenter.updateCartModel();
     }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        presenter.getCartItemCount();
+    }
 }
