@@ -5,6 +5,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.nanocustomer.R;
 import com.nanocustomer.models.AddressModel;
 import com.nanocustomer.models.CartDataModel;
@@ -40,7 +41,7 @@ public class ActivityCartPresenter {
         preferences = Preferences.getInstance();
         userModel = preferences.getUserData(context);
         cartDataModel = preferences.getCartData(context);
-        if (cartDataModel==null){
+        if (cartDataModel == null) {
             cartDataModel = new CartDataModel();
             cartDataModel.setCartModelList(new ArrayList<>());
         }
@@ -103,12 +104,12 @@ public class ActivityCartPresenter {
 
 
         cartDataModel.setTotal(total);
-        double totalAfterDiscount=0.0;
-        if (cartDataModel.getType()==0){
-             totalAfterDiscount = (total - (cartDataModel.getCoupon_discount()*total/100)) + cartDataModel.getDelivery_cost() + cartDataModel.getPackaging_cost();
-            cartDataModel.setCoupon_discount(cartDataModel.getCoupon_discount()*total/100);
+        double totalAfterDiscount = 0.0;
+        if (cartDataModel.getType() == 0) {
+            totalAfterDiscount = (total - (cartDataModel.getCoupon_discount() * total / 100)) + cartDataModel.getDelivery_cost() + cartDataModel.getPackaging_cost();
+            cartDataModel.setCoupon_discount(cartDataModel.getCoupon_discount() * total / 100);
 
-        }else {
+        } else {
             totalAfterDiscount = (total - cartDataModel.getCoupon_discount()) + cartDataModel.getDelivery_cost() + cartDataModel.getPackaging_cost();
 
         }
@@ -145,10 +146,10 @@ public class ActivityCartPresenter {
                             }
 
 
-                        }else if (response.body() != null && response.body().getStatus() != 200){
+                        } else if (response.body() != null && response.body().getStatus() != 200) {
                             Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
 
-                        }else {
+                        } else {
 
                             dialog.dismiss();
                             try {
@@ -212,7 +213,7 @@ public class ActivityCartPresenter {
         }
     }
 
-    public void updateDelivery(int delivery_type, int packaging_type,int payment_type) {
+    public void updateDelivery(int delivery_type, int packaging_type, int payment_type) {
         if (cartDataModel != null) {
             if (delivery_type == 1) {
                 cartDataModel.setDelivery_cost(50);
@@ -241,10 +242,13 @@ public class ActivityCartPresenter {
     }
 
     public void sendOrder() {
+
         if (userModel == null && cartDataModel == null) {
             return;
         }
-
+        Gson gson = new Gson();
+        String user_data = gson.toJson(cartDataModel);
+        Log.e("slksk", user_data);
         ProgressDialog dialog = Common.createProgressDialog(context, context.getString(R.string.wait));
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
@@ -253,7 +257,7 @@ public class ActivityCartPresenter {
         double totalAfterDiscount = (cartDataModel.getTotal() - cartDataModel.getCoupon_discount()) + cartDataModel.getDelivery_cost() + cartDataModel.getPackaging_cost();
         List<SendCartModel.Cart> cartList = getCartList();
 
-        SendCartModel sendCartModel = new SendCartModel(String.valueOf(userModel.getData().getUser().getId()), String.valueOf(totalAfterDiscount), cartDataModel.getAddress(), cartDataModel.getAddress(), String.valueOf(cartDataModel.getDelivery_cost()), String.valueOf(cartDataModel.getPackaging_cost()), cartDataModel.getPhone(), cartDataModel.getCoupon_code(),cartDataModel.getCoupon_id(), String.valueOf(cartDataModel.getCoupon_discount()), String.valueOf(cartDataModel.getTotal()), cartList);
+        SendCartModel sendCartModel = new SendCartModel(String.valueOf(userModel.getData().getUser().getId()), String.valueOf(totalAfterDiscount), cartDataModel.getAddress(), cartDataModel.getAddress(), String.valueOf(cartDataModel.getDelivery_cost()), String.valueOf(cartDataModel.getPackaging_cost()), cartDataModel.getPhone(), cartDataModel.getCoupon_code(), cartDataModel.getCoupon_id(), String.valueOf(cartDataModel.getCoupon_discount()), String.valueOf(cartDataModel.getTotal()), cartList);
 
 
         Api.getService(Tags.base_url)
@@ -265,11 +269,12 @@ public class ActivityCartPresenter {
                         if (response.isSuccessful()) {
 
                             if (response.body() != null) {
-                                Log.e("ddddddd", response+"____");
-                                Log.e("ccccccc", response.code()+"____");
+                                Log.e("ddddddd", response + "____");
+                                Log.e("ccccccc", response.code() + "____");
                                 if (response.body().getData() != null) {
 
-
+                                    String user_data = gson.toJson(response.body());
+                                    Log.e("slksk", user_data);
                                     view.onOrderSendSuccessfully(response.body());
                                     preferences.clearCart(context);
                                     cartDataModel = null;
@@ -280,8 +285,8 @@ public class ActivityCartPresenter {
 
                                 }
 
-                            }else if (response.body() != null ){
-                               // Toast.makeText(context, response.body().getMessage()+"", Toast.LENGTH_SHORT).show();
+                            } else if (response.body() != null) {
+                                // Toast.makeText(context, response.body().getMessage()+"", Toast.LENGTH_SHORT).show();
 
                             }
 
@@ -331,9 +336,9 @@ public class ActivityCartPresenter {
         List<SendCartModel.Cart> cartList = new ArrayList<>();
         for (CartDataModel.CartModel model : cartDataModel.getCartModelList()) {
 
-            for (int index=0;index<model.getAmount();index++){
+            for (int index = 0; index < model.getAmount(); index++) {
                 String product_id = model.getId();
-                cartList.add(new SendCartModel.Cart(product_id,model.getAmount()));
+                cartList.add(new SendCartModel.Cart(product_id, model.getAmount()));
             }
 
         }
