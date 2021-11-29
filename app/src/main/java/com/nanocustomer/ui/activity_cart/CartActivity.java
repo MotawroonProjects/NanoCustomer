@@ -18,7 +18,6 @@ import com.nanocustomer.adapters.CartAdapter;
 import com.nanocustomer.databinding.ActivityCartBinding;
 import com.nanocustomer.language.Language;
 import com.nanocustomer.models.AddressModel;
-import com.nanocustomer.models.BankDataModel;
 import com.nanocustomer.models.CartDataModel;
 import com.nanocustomer.models.CouponDataModel;
 import com.nanocustomer.models.SingleOrderModel;
@@ -28,8 +27,6 @@ import com.nanocustomer.share.Common;
 import com.nanocustomer.ui.activity_order_checkout.OrderCheckoutActivity;
 import com.nanocustomer.ui.activity_order_details.OrderDetailsActivity;
 import com.nanocustomer.ui.activity_select_address.SelectAddressActivity;
-import com.nanocustomer.ui.activity_sign_up.SignUpActivity;
-import com.nanocustomer.ui.activity_web_view.WebViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,7 +82,7 @@ public class CartActivity extends AppCompatActivity implements CartActivityView 
         });
         binding.btnNext.setOnClickListener(view -> {
            // presenter.checkOut();
-            presenter.sendOrder();
+            presenter.sendOrder(binding.address.getText().toString());
         });
     }
 
@@ -257,7 +254,7 @@ public class CartActivity extends AppCompatActivity implements CartActivityView 
             int packaging_type = data.getIntExtra("packaging",0);
             int payment_type = data.getIntExtra("payment",0);
             presenter.updateDelivery(delivery_type,packaging_type,payment_type);
-            presenter.sendOrder();
+            presenter.sendOrder(binding.address.getText().toString());
         }
     }
 }

@@ -81,9 +81,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@id/toolBar"
                 android:visibility="gone"
-                >
+                app:layout_constraintTop_toBottomOf="@id/toolBar">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -134,27 +133,27 @@
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
+                            android:clickable="false"
                             android:gravity="center"
+                            android:longClickable="false"
                             android:padding="5dp"
                             android:text="@string/check"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:clickable="false"
-                            android:longClickable="false"
-                            />
+                            android:textSize="14sp" />
                     </FrameLayout>
 
 
                 </LinearLayout>
+
                 <TextView
                     android:id="@+id/tvCouponDiscount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="8dp"
                     android:textColor="@color/gray8"
                     android:textSize="15sp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginTop="5dp"
 
                     />
             </LinearLayout>
@@ -187,43 +186,84 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
 
                     >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center_vertical"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_info"
+                            app:tint="@color/colorPrimary"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="@string/address"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_margin="16dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rounded_gray"
+                        android:gravity="top|start"
+                        android:hint="@string/address"
+                        android:padding="20dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:background="@drawable/small_rounded_white_stroke"
-                        android:paddingTop="5dp"
-                        >
+                        android:orientation="vertical"
+                        android:paddingTop="5dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:paddingLeft="8dp"
-                            android:paddingRight="8dp"
-                            >
+                            android:paddingRight="8dp">
+
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="@color/gray8"
+                                android:layout_gravity="top"
                                 android:layout_weight=".5"
                                 android:text="@string/total_items_cost"
-                                android:layout_gravity="top"
-                                />
+                                android:textColor="@color/gray8"
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/tvTotalItemCost"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:textSize="15sp"
-                                android:textColor="@color/black"
-                                android:layout_weight=".5"
                                 android:layout_gravity="top"
-                                />
+                                android:layout_weight=".5"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
 
 
                         </LinearLayout>
@@ -231,83 +271,82 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"
                             android:orientation="horizontal"
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
-                            android:layout_marginTop="3dp"
-                            android:layout_marginBottom="3dp"
-                            android:visibility="gone"
-                            >
+                            android:visibility="gone">
+
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="@color/gray8"
+                                android:layout_gravity="top"
                                 android:layout_weight=".5"
                                 android:text="@string/discount2"
-                                android:layout_gravity="top"
-                                />
+                                android:textColor="@color/gray8"
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/tvDiscount"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:textSize="15sp"
-                                android:textColor="@color/black"
-                                android:layout_weight=".5"
                                 android:layout_gravity="top"
-                                />
+                                android:layout_weight=".5"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
 
 
                         </LinearLayout>
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1px"
-                            android:background="@color/gray1"
                             android:layout_marginTop="3dp"
-                            android:layout_marginBottom="3dp"/>
+                            android:layout_marginBottom="3dp"
+                            android:background="@color/gray1" />
 
                         <LinearLayout
                             android:id="@+id/llDelivery"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"
                             android:orientation="horizontal"
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
-                            android:layout_marginTop="3dp"
-                            android:layout_marginBottom="3dp"
                             android:visibility="gone"
 
                             >
+
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="@color/gray8"
+                                android:layout_gravity="top"
                                 android:layout_weight=".5"
                                 android:text="@string/delivery_method"
-                                android:layout_gravity="top"
-                                />
+                                android:textColor="@color/gray8"
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/tvDelivery"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:textSize="15sp"
-                                android:textColor="@color/black"
-                                android:layout_weight=".5"
                                 android:layout_gravity="top"
-                                />
+                                android:layout_weight=".5"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
 
 
                         </LinearLayout>
+
                         <View
                             android:id="@+id/viewDelivery"
                             android:layout_width="match_parent"
                             android:layout_height="1px"
-                            android:background="@color/gray1"
                             android:layout_marginTop="3dp"
                             android:layout_marginBottom="3dp"
+                            android:background="@color/gray1"
                             android:visibility="gone"
 
                             />
@@ -316,89 +355,88 @@
                             android:id="@+id/llPackaging"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"
                             android:orientation="horizontal"
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
-                            android:layout_marginTop="3dp"
-                            android:layout_marginBottom="3dp"
                             android:visibility="gone"
 
                             >
+
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="@color/gray8"
+                                android:layout_gravity="top"
                                 android:layout_weight=".5"
                                 android:text="@string/packaging"
-                                android:layout_gravity="top"
-                                />
+                                android:textColor="@color/gray8"
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/tvPackaging"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:textSize="15sp"
-                                android:textColor="@color/black"
-                                android:layout_weight=".5"
                                 android:layout_gravity="top"
+                                android:layout_weight=".5"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
 
                                 />
 
 
                         </LinearLayout>
+
                         <View
                             android:id="@+id/viewPackaging"
                             android:layout_width="match_parent"
                             android:layout_height="1px"
-                            android:background="@color/gray1"
                             android:layout_marginTop="3dp"
                             android:layout_marginBottom="3dp"
-                            android:visibility="gone"
-                            />
+                            android:background="@color/gray1"
+                            android:visibility="gone" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp"
                             android:layout_marginTop="3dp"
                             android:layout_marginBottom="8dp"
-                            >
+                            android:orientation="horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp">
+
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="@color/gray8"
+                                android:layout_gravity="top"
                                 android:layout_weight=".5"
                                 android:text="@string/total"
-                                android:layout_gravity="top"
-                                />
+                                android:textColor="@color/gray8"
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/tvTotal"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:textSize="18sp"
-                                android:textColor="@color/black"
-                                android:layout_weight=".5"
                                 android:layout_gravity="top"
+                                android:layout_weight=".5"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
                                 android:textStyle="bold"
 
                                 />
 
 
                         </LinearLayout>
+
                         <Button
                             android:id="@+id/btnNext"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/colorPrimary"
-                            android:textColor="@color/white"
-                            android:textSize="16sp"
                             android:text="@string/checkout"
-                            />
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                 </LinearLayout>

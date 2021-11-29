@@ -10,8 +10,6 @@ import com.nanocustomer.R;
 import com.nanocustomer.models.AddressModel;
 import com.nanocustomer.models.CartDataModel;
 import com.nanocustomer.models.CouponDataModel;
-import com.nanocustomer.models.LogoutModel;
-import com.nanocustomer.models.ProductModel;
 import com.nanocustomer.models.SendCartModel;
 import com.nanocustomer.models.SingleOrderModel;
 import com.nanocustomer.models.UserModel;
@@ -241,14 +239,12 @@ public class ActivityCartPresenter {
         calculateTotalCost();
     }
 
-    public void sendOrder() {
+    public void sendOrder(String s) {
 
         if (userModel == null && cartDataModel == null) {
             return;
         }
-        Gson gson = new Gson();
-        String user_data = gson.toJson(cartDataModel);
-        Log.e("slksk", user_data);
+     // cartDataModel.setAddress(s);
         ProgressDialog dialog = Common.createProgressDialog(context, context.getString(R.string.wait));
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
@@ -258,7 +254,7 @@ public class ActivityCartPresenter {
         List<SendCartModel.Cart> cartList = getCartList();
 
         SendCartModel sendCartModel = new SendCartModel(String.valueOf(userModel.getData().getUser().getId()), String.valueOf(totalAfterDiscount), cartDataModel.getAddress(), cartDataModel.getAddress(), String.valueOf(cartDataModel.getDelivery_cost()), String.valueOf(cartDataModel.getPackaging_cost()), cartDataModel.getPhone(), cartDataModel.getCoupon_code(), cartDataModel.getCoupon_id(), String.valueOf(cartDataModel.getCoupon_discount()), String.valueOf(cartDataModel.getTotal()), cartList);
-
+sendCartModel.setAddress(s);
 
         Api.getService(Tags.base_url)
                 .sendOrder(userModel.getData().getToken(), sendCartModel)
@@ -273,8 +269,7 @@ public class ActivityCartPresenter {
                                 Log.e("ccccccc", response.code() + "____");
                                 if (response.body().getData() != null) {
 
-                                    String user_data = gson.toJson(response.body());
-                                    Log.e("slksk", user_data);
+
                                     view.onOrderSendSuccessfully(response.body());
                                     preferences.clearCart(context);
                                     cartDataModel = null;

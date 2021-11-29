@@ -17,6 +17,7 @@ public class SendCartModel implements Serializable {
     private String net_cost;
     private List<Cart> cart;
 
+    private String address;
     public SendCartModel(String user_id, String total, String customer_address, String shipping_address, String shipping_cost, String packing_cost, String phone, String coupon_code, int coupon_id, String coupon_discount, String net_cost, List<Cart> cart) {
         this.user_id = user_id;
         this.total = total;
@@ -78,6 +79,14 @@ public class SendCartModel implements Serializable {
 
     public List<Cart> getCart() {
         return cart;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public static class Cart implements Serializable {

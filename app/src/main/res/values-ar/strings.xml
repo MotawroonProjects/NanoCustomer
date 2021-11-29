@@ -170,9 +170,9 @@
     <string name="edit_profile">تعديل الملف الشخصى</string>
     <string name="social_media">تابعنا على مواقع التواصل</string>
     <string name="not_avail_now">غير متاح حاليا</string>
-    <string name="best_seller">Best Seller</string>
-    <string name="special_offers">Special Offer</string>
-    <string name="refused">Order Refused</string>
-    <string name="order_sent">Order Sent</string>
+    <string name="best_seller">الاكثر مبيعا</string>
+    <string name="special_offers">عروض خاصه</string>
+    <string name="refused">تم رفض الطلب</string>
+    <string name="order_sent">تم ارسال الطلب</string>
 
 </resources>

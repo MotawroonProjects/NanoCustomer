@@ -147,7 +147,7 @@
                         android:gravity="center"
                         android:textStyle="bold"
                         android:singleLine="true"
-                        android:text='@{model.total_price+""}'
+                        android:text='@{(model.qty*model.item_price)+""}'
                         android:textColor="@color/black"
                         android:textSize="18sp"
 

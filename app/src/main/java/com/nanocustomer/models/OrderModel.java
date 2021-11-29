@@ -42,7 +42,7 @@ public class OrderModel implements Serializable {
     }
 
     public static class CartProductModel implements Serializable{
-        private int qty;
+        private double qty;
         private int size_key;
         private String size_qty;
         private String size_price;
@@ -51,15 +51,15 @@ public class OrderModel implements Serializable {
         private String stock;
         private String keys;
         private String values;
-        private String item_price;
+        private double item_price;
         private int id;
         private String name;
         private String vendor_id;
         private String type;
         private String feature_image;
-        private double total_price;
+        private double total;
 
-        public int getQty() {
+        public double getQty() {
             return qty;
         }
 
@@ -95,7 +95,7 @@ public class OrderModel implements Serializable {
             return values;
         }
 
-        public String getItem_price() {
+        public double getItem_price() {
             return item_price;
         }
 
@@ -119,8 +119,8 @@ public class OrderModel implements Serializable {
             return feature_image;
         }
 
-        public double getTotal_price() {
-            return total_price;
+        public double getTotal() {
+            return total;
         }
     }
 
